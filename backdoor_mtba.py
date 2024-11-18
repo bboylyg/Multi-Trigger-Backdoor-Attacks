@@ -1097,8 +1097,8 @@ def get_arguments():
     parser.add_argument('--log_name', type=str, default=None, help='logs with different name')
     parser.add_argument('--dataset', type=str, default='CIFAR10', help='name of image dataset \
                                                     [CIFAR10, CIFAR100, ImageNet, ImageNette]')
-    parser.add_argument('--num_classes', type=int, default=20, help='number of classes') 
-    parser.add_argument('--model_name', type=str, default='ResNet50', help='name of model')
+    parser.add_argument('--num_classes', type=int, default=10, help='number of classes') 
+    parser.add_argument('--model_name', type=str, default='ResNet18', help='name of model')
     parser.add_argument('--checkpoint_root', type=str, default='weight/', help='path of pretrained model weight')
     parser.add_argument('--pretrained', type=str, default=False, help='whether load the pretrained model weight')
     parser.add_argument('--save_root', type=str, default='weight', help='save the model weight')
@@ -1150,12 +1150,11 @@ if __name__ == '__main__':
 
 
     if args.dataset == 'CIFAR10':
-        model_names = ['ResNet18', 'MobileNetV2', 'vit_small_patch16_224', 'vit_base_patch16_224']
+        model_names = ['ResNet18']
         trigger_pools_cifar = ['onePixelTrigger', 'gridTrigger', 'wanetTrigger', 'trojanTrigger', 'blendTrigger',
                              'signalTrigger', 'CLTrigger', 'smoothTrigger', 'dynamicTrigger', 'nashTrigger']
         
         attack_types = ['multi_triggers_all2one']
-        # poison_rates = [0.01, 0.001, 0.0005, 0.0002]
         poison_rates = [0.01]
 
         for model_name in model_names:
