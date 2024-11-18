@@ -1095,7 +1095,7 @@ def get_arguments():
     # various path
     parser.add_argument('--output_dir', type=str, default='logs/', help='logs are saved here')
     parser.add_argument('--log_name', type=str, default=None, help='logs with different name')
-    parser.add_argument('--dataset', type=str, default='ImageNet', help='name of image dataset \
+    parser.add_argument('--dataset', type=str, default='CIFAR10', help='name of image dataset \
                                                     [CIFAR10, CIFAR100, ImageNet, ImageNette]')
     parser.add_argument('--num_classes', type=int, default=20, help='number of classes') 
     parser.add_argument('--model_name', type=str, default='ResNet50', help='name of model')
@@ -1105,7 +1105,7 @@ def get_arguments():
 
     # training hyper parameters
     parser.add_argument('--print_freq', type=int, default=200, help='frequency of showing training results on console')
-    parser.add_argument('--epochs', type=int, default=11, help='number of epochs to run') 
+    parser.add_argument('--epochs', type=int, default=100, help='number of epochs to run') 
     parser.add_argument('--batch_size', type=int, default=128, help='The size of batch')
     parser.add_argument('--lr', type=float, default=0.1, help='initial learning rate')
     parser.add_argument('--momentum', type=float, default=0.9, help='momentum')
@@ -1130,7 +1130,7 @@ def get_arguments():
     # backdoor attacks
     parser.add_argument('--attack_type', type=str, default='multi_triggers_all2one', help="Support Triggers: ['single_trigger', 'multi_triggers_all2one', \
                                                                                         'multi_triggers_all2all', 'clean_label', 'mixed2triggers']")
-    parser.add_argument('--poison_rate', type=float, default=0.001, help='ratio of backdoor samples')
+    parser.add_argument('--poison_rate', type=float, default=0.01, help='ratio of backdoor samples')
     parser.add_argument('--poison_target', type=int, default=0, help='class of target label')
     parser.add_argument('--trigger_types', type=str, default=['onePixelTrigger', 'gridTrigger',
                     'fourCornerTrigger', 'trojanTrigger', 'blendTrigger', 'signalTrigger', 'CLTrigger', 'smoothTrigger', 'dynamicTrigger', 'nashTrigger'], 
