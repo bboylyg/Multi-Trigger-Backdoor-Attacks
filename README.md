@@ -18,7 +18,7 @@ The figure above demonstrates the effectiveness of multi-trigger attacks at vari
 To launch a parallel attack on ResNet-18 with 10 different triggers, run the following command:
 ```shell
 python backdoor_mtba.py
-
+```
 
 # Acknowledgement
 As our work is currently under review, this is an open-source project contributed by the authors for the reproduction of the main results.
